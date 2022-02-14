@@ -46,23 +46,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: extension
-      
-      - name: Remove unnecesary files
-        run: |
-          rm -f extension/html/popup.html
-          rm -f extension/css/popup.css
-          rm -f extension/js/popup.js
-          rm -f extension/CNAME
-          rm -f extension/README.md
-          rm -rf extension/vendor
-          rm -rf extension/config
-          rm -f extension/SECURITY.md
-          rm -f CODE_OF_CONDUCT.md
-          rm -f CONTRIBUTING.md
-          rm -f extension/LICENCE
-          rm -f extension/.gitpod.yml
-          rm -rf extension/.github
-      
+
       - name: Build ZIP for Validation
         uses: cardinalby/webext-buildtools-pack-extension-dir-action@v1
         with:
@@ -91,21 +75,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-      
-      - name: Remove unnecesary files
-        run: |
-          rm -f html/extension_settings.html
-          rm -f manifest.json
-          rm -rf _locales
-          rm -f js/inject.js
-          rm -f js/inject_gdoc.js
-          rm -f js/background.js
-          rm -f SECURITY.md
-          rm -f CODE_OF_CONDUCT.md
-          rm -f CONTRIBUTING.md
-          rm -f LICENCE
-          rm -f .gitpod.yml
-          rm -rf .github
      
       - name: Minify JS and CSS
         uses: nizarmah/auto-minify@v2.1
