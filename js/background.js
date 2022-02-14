@@ -37,7 +37,7 @@ async function track(event, props) {
       'token': token
     });
     // Get if analytics are enabled
-    let do_analytics = sync_data.options && sync_data.options.analytics;
+    let do_analytics = sync_data && sync_data.analytics;
     if (!do_analytics) {
       return;
     }
